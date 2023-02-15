@@ -1,47 +1,47 @@
 import java.util.Map;
-import java.util.HashMap;
+import java.util.HashMap; // ä¸å®‰å…¨
 public class Test28 {
     public static void main(String[] args){
-        //Ê¹ÓÃHashMapÀà´´½¨map
+        //ä½¿ç”¨HashMapç±»åˆ›å»ºmap
         Map<String, Integer> map = new HashMap<>();
 
-        //½«ÔªËØ²åÈëmap¼¯ºÍ
+        //å°†å…ƒç´ æ’å…¥mapé›†å’Œ
         map.put("niao", 1);  // {niao=1, long=2}
         map.put("long", 2);
         map.put("ji", 3);
-        System.out.println("Map:"+map);  // ÁĞ±íÊÇ[]£¬¶ø¼¯ºÍÊÇ{}
+        System.out.println("Map:"+map);  // åˆ—è¡¨æ˜¯[]ï¼Œè€Œé›†å’Œæ˜¯{}
 
-        //ÒÔ×éµÄĞÎÊ½·µ»ØËùÓĞ
-        System.out.println("ËùÓĞ£º"+map.entrySet());
+        //ä»¥ç»„çš„å½¢å¼è¿”å›æ‰€æœ‰
+        System.out.println("æ‰€æœ‰ï¼š"+map.entrySet());
 
-        // ¼üÖµÎª£¨key£©
-        System.out.println("¼üÖµÎª:"+map.keySet());  // Ò²¾ÍÊÇputµÄµÚÒ»¸öÔªËØµÄµÚÒ»¸öÖµ
+        // é”®å€¼ä¸ºï¼ˆkeyï¼‰
+        System.out.println("é”®å€¼ä¸º:"+map.keySet());  // ä¹Ÿå°±æ˜¯putçš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„ç¬¬ä¸€ä¸ªå€¼
 
-        // Óë¼üÏà¶ÔÓ¦µÄÖµ¾ÍÊÇÔªËØµÄµÚ¶ş¸öÖµ
-        System.out.println("ÖµÎª:"+map.values());
+        // ä¸é”®ç›¸å¯¹åº”çš„å€¼å°±æ˜¯å…ƒç´ çš„ç¬¬äºŒä¸ªå€¼
+        System.out.println("å€¼ä¸º:"+map.values());
 
         int removenum = map.remove("long");
-        System.out.println("±»É¾³ıµÄÄÇ¸öÊı£º"+removenum);  // Í¨¹ı¼üÖµÈ¥Ëø¶¨È»ºóÉ¾³ı
+        System.out.println("è¢«åˆ é™¤çš„é‚£ä¸ªæ•°ï¼š"+removenum);  // é€šè¿‡é”®å€¼å»é”å®šç„¶ååˆ é™¤
 
-        // ÒÔ¼üÖµÈ¥¶ÔÓ¦ÕÒµ½Öµ
-        System.out.println("¼üÖµjiµÄ¶ÔÓ¦Îª£º"+map.get("ji"));
+        // ä»¥é”®å€¼å»å¯¹åº”æ‰¾åˆ°å€¼
+        System.out.println("é”®å€¼jiçš„å¯¹åº”ä¸ºï¼š"+map.get("ji"));
 
-        // Ìæ»»Öµreplace
+        // æ›¿æ¢å€¼replace
         map.replace("ji", 4);
-        System.out.println("Ã»ÎÊÌâµÄ»°ji¼ü±»Ìæ»»³É4£º"+map.get("ji"));  // ¼üÖµÎ¨Ò»£¬ËùÒÔÖ»ÓĞÍ¨¹ı¼üÖµÑ°ÕÒ
+        System.out.println("æ²¡é—®é¢˜çš„è¯jié”®è¢«æ›¿æ¢æˆ4ï¼š"+map.get("ji"));  // é”®å€¼å”¯ä¸€ï¼Œæ‰€ä»¥åªæœ‰é€šè¿‡é”®å€¼å¯»æ‰¾
 
-        // ³ıÁËÖ¸¶¨Ò²¿ÉÒÔÍ¨¹ı¼ÆËãµÄ·½Ê½¸Ä±äÖµ
-        map.compute("ji", (String, Integer) -> Integer+2);  // ÕâÀïµÄInteger¿ÉÒÔ»»³ÉÆäÓàµÄ±äÁ¿Ãû
-        System.out.println("¼üji¸Ã±äÎª+2ºóµÄÖµ:"+map.get("ji"));
+        // é™¤äº†æŒ‡å®šä¹Ÿå¯ä»¥é€šè¿‡è®¡ç®—çš„æ–¹å¼æ”¹å˜å€¼
+        map.compute("ji", (String, Integer) -> Integer+2);  // è¿™é‡Œçš„Integerå¯ä»¥æ¢æˆå…¶ä½™çš„å˜é‡å
+        System.out.println("é”®jiè¯¥å˜ä¸º+2åçš„å€¼:"+map.get("ji"));
 
-        // ¸Ä±äÖµ³ıÁËreplace»¹ÄÜÓÃmerge
-        map.merge("ji", 3, (newvalue, oldvalue) -> newvalue+oldvalue); // 3Îªnewvalue£¬oldvlue¾ÈÊêÔ­±¾µÄÖµ
-        System.out.println("¼üÖµjiµÄĞÂ¶ÔÓ¦ÖµÎª:"+map.get("ji"));
+        // æ”¹å˜å€¼é™¤äº†replaceè¿˜èƒ½ç”¨merge
+        map.merge("ji", 3, (newvalue, oldvalue) -> newvalue+oldvalue); // 3ä¸ºnewvalueï¼Œoldvlueæ•‘èµåŸæœ¬çš„å€¼
+        System.out.println("é”®å€¼jiçš„æ–°å¯¹åº”å€¼ä¸º:"+map.get("ji"));
 
         //clear() size() isEmpty()
-        System.out.println("mapµÄ´óĞ¡Îª:"+map.size());
-        System.out.println("Çå¿ÕÁËÂğ£¿:"+map.isEmpty());
+        System.out.println("mapçš„å¤§å°ä¸º:"+map.size());
+        System.out.println("æ¸…ç©ºäº†å—ï¼Ÿ:"+map.isEmpty());
         map.clear();
-        System.out.println("Çå¿ÕÁËÂğ£¿:"+map.isEmpty());
+        System.out.println("æ¸…ç©ºäº†å—ï¼Ÿ:"+map.isEmpty());
     }
 }
