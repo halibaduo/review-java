@@ -2,48 +2,48 @@ public class Test26 {
     public static void main(String[] args){
         String str0 = "abcdefg";
         char[] ch0 = new char[str0.length()];
-        System.out.println("×Ö·û´®µÄÏÂ±êÎª1µÄ×ÖÄ¸ÊÇ:"+str0.charAt(1));
+        System.out.println("å­—ç¬¦ä¸²çš„ä¸‹æ ‡ä¸º1çš„å­—æ¯æ˜¯:"+str0.charAt(1));
         ch0 = str0.toCharArray();
         for(char i : ch0)
             System.out.print(i);
 
-        //½ÓÀ´ÏÂËµÏÂÊı×é×ª»¯Îª×Ö·û´®
+        //æ¥æ¥ä¸‹è¯´ä¸‹æ•°ç»„è½¬åŒ–ä¸ºå­—ç¬¦ä¸²
         char[] ch1 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         String str3 = String.copyValueOf(ch1);
-        System.out.println("\nÊı×éch1×ª»¯Îª×Ö·û´®:"+str3);
+        System.out.println("\næ•°ç»„ch1è½¬åŒ–ä¸ºå­—ç¬¦ä¸²:"+str3);
 
         int num0 = 1;
-        String str1 = String.valueOf(num0);  // µ­È»×î¼òµ¥µÄ¾ÍÊÇ num0 + "" Ö±½Ó¾ÍºÃ
-        System.out.println("Êı×Önums0×ª»¯Îª×Ö·û´®:"+str1.charAt(0));
+        String str1 = String.valueOf(num0);  // å½“ç„¶æœ€ç®€å•çš„å°±æ˜¯ num0 + "" ç›´æ¥å°±å¥½
+        System.out.println("æ•°å­—nums0è½¬åŒ–ä¸ºå­—ç¬¦ä¸²:"+str1.charAt(0));
         String str2 = "12";
-        int num1 = Integer.parseInt(str2); //ÕâÊÇ½«×Ö·û´®×ª»¯ÎªÊı×Ö
-        System.out.println("×Ö·û´®str2×ª»¯ÎªÊı×Ö:"+num1);
-        char ch4 = '1';  // ÏÈ½«Õâ¸öµ¥¸ö×Ö·û±äÎªÊı×Ö
-        System.out.println("(int)ch4ÊÇÊä³öASCIIÂëÖµ£¡"+(int)ch4);
+        int num1 = Integer.parseInt(str2); //è¿™æ˜¯å°†å­—ç¬¦ä¸²è½¬åŒ–ä¸ºæ•°å­—
+        System.out.println("å­—ç¬¦ä¸²str2è½¬åŒ–ä¸ºæ•°å­—:"+num1);
+        char ch4 = '1';  // å…ˆå°†è¿™ä¸ªå•ä¸ªå­—ç¬¦å˜ä¸ºæ•°å­—
+        System.out.println("(int)ch4æ˜¯è¾“å‡ºASCIIç å€¼ï¼"+(int)ch4);
         int num2 = ch4 - '0';
-        System.out.println("ch4-'0'²ÅÊÇ"+num2);  // Õâ²ÅÊÇµ¥¸ö×Ö·û×ª»¯ÎªÊı×Ö
+        System.out.println("ch4-'0'æ‰æ˜¯"+num2);  // è¿™æ‰æ˜¯å•ä¸ªå­—ç¬¦è½¬åŒ–ä¸ºæ•°å­—
         int num3 = 1;
         String str4 = String.valueOf(num3);
         char ch7 = str4.charAt(0);
-        System.out.println("µ¥¸öÊı×Önum3×ª»¯Îª×Ö·û:"+ch7);  // ¿É¼ûĞèÒªÏÈ×ª»¯Îª×Ö·û´®ÔÙÌáÈ¡
+        System.out.println("å•ä¸ªæ•°å­—num3è½¬åŒ–ä¸ºå­—ç¬¦:"+ch7);  // å¯è§éœ€è¦å…ˆè½¬åŒ–ä¸ºå­—ç¬¦ä¸²å†æå–
 
         char ch2 = 'a', ch3 = ' ';
         if(Character.isSpace(ch2))
-            System.out.println("ch2ÊÇ¿Õ¸ñ");
+            System.out.println("ch2æ˜¯ç©ºæ ¼");
         if(Character.isSpaceChar(ch3))
-            System.out.println("ch3ÊÇ¿Õ¸ñ");
+            System.out.println("ch3æ˜¯ç©ºæ ¼");
 
-        //½«×ÖÄ¸a±äÎªb
+        //å°†å­—æ¯aå˜ä¸ºb
         char ch5 = 'a';
         char ch6 = (char)(ch5+1);
-        System.out.println("Îª:"+ch6);
+        System.out.println("ä¸º:"+ch6);
 
-        //substring¡¢startsWith¡¢endsWith
+        //substringã€startsWithã€endsWith
         String str5 = "abcdefg";
-        boolean answer1 = str5.startsWith("a"); // ×¢ÒâÊÇ"" µ¥ÒıºÅ²»ĞĞ
+        boolean answer1 = str5.startsWith("a"); // æ³¨æ„æ˜¯"" å•å¼•å·ä¸è¡Œ
         boolean answer2 = str5.endsWith("f");
-        str5 = str5.substring(0,2);   // ´ÓÏÂ±ê1¿ªÊ¼£¬µ«²»°üÀ¨ÏÂ±ê2
-        System.out.println("str5Îª:"+str5);
+        str5 = str5.substring(0,2);   // ä»ä¸‹æ ‡0å¼€å§‹ï¼Œä½†ä¸åŒ…æ‹¬ä¸‹æ ‡2
+        System.out.println("str5ä¸º:"+str5);
         System.out.println("answer1="+answer1+",answer2"+answer2);
     }
 }
